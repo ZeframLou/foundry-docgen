@@ -1,0 +1,20 @@
+{
+  "name": "foundry-docgen",
+  "version": "1.0.0",
+  "description": "Generates markdown documentation from Solidity NatSpec comments.",
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "foundry",
+    "documentation",
+    "markdown"
+  ],
+  "author": "zefram.eth",
+  "license": "AGPL-3.0",
+  "bin": "bin.js",
+  "type": "module",
+  "dependencies": {
+    "solidity-docgen": "^0.6.0-beta.16",
+    "yargs": "^17.5.1"
+  }
+}
