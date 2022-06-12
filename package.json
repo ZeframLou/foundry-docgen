@@ -1,6 +1,6 @@
 {
   "name": "foundry-docgen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generates markdown documentation from Solidity NatSpec comments.",
   "keywords": [
     "solidity",
