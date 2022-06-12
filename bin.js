@@ -21,13 +21,16 @@ async function main() {
         .alias("i", "in")
         .alias("o", "out")
         .alias("v", "version")
+        .alias("t", "templates")
         .describe("i", "Path to the Foundry project's artifacts directory")
         .describe(
             "o",
             "The directory where the markdown docs will be output into"
         )
+        .describe("t", "The directory with the Handlebars templates for generating the markdown files")
         .default("i", "./out")
-        .default("o", "./docgen").argv;
+        .default("o", "./docgen")
+        .default("t", `${__dirname}/templates`).argv;
 
     const inputPath = argv.in;
     const outputPath = argv.out;
@@ -70,7 +73,7 @@ async function main() {
         {
             outputDir: outputPath,
             pages: "items",
-            templates: `${__dirname}/templates`,
+            templates: argv.templates,
         }
     );
 }
