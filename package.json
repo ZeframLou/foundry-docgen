@@ -10,7 +10,7 @@
     "markdown"
   ],
   "author": "zefram.eth",
-  "license": "AGPL-3.0",
+  "license": "MIT",
   "bin": "bin.js",
   "type": "module",
   "dependencies": {
