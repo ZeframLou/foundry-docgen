@@ -6,17 +6,24 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
 async function main() {
-    const argv = yargs(hideBin(process.argv)).argv;
+    const argv = yargs(hideBin(process.argv))
+        .usage("Usage: npx $0 [contracts] [options]")
+        .example("npx $0 SomeContract AnotherContract --in ~/my-foundry-repo/out --out ./docs")
+        .help("h")
+        .alias("h", "help")
+        .alias("i", "in")
+        .alias("o", "out")
+        .alias("v", "version")
+        .describe("i", "Path to the Foundry project's artifacts directory")
+        .describe(
+            "o",
+            "The directory where the markdown docs will be output into"
+        )
+        .default("i", "./out")
+        .default("o", "./docgen").argv;
 
-    let inputPath = "./out"; // default Foundry output path
-    if (argv.in) {
-        inputPath = argv.in;
-    }
-
-    let outputPath = "./docgen"; // default output path
-    if (argv.out) {
-        outputPath = argv.out;
-    }
+    const inputPath = argv.in;
+    const outputPath = argv.out;
 
     let solidityFileDirs;
     if (argv._.length > 0) {

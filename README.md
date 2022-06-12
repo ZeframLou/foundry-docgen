@@ -24,6 +24,8 @@ You can also specify the input and output paths. For instance,
 npx foundry-docgen --in ~/Documents/foundry-project/out --out ./documentations
 ```
 
+Use `npx foundry-docgen help` to see all options.
+
 ## Known issues
 
 - Running `npx foundry-docgen` for complex projects can trigger the error `Error: Circular dependency detected: aliased imports not supported`.
