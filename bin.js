@@ -4,11 +4,18 @@ import { docgen } from "solidity-docgen";
 import { readdir, readFile } from "node:fs/promises";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 async function main() {
     const argv = yargs(hideBin(process.argv))
         .usage("Usage: npx $0 [contracts] [options]")
-        .example("npx $0 SomeContract AnotherContract --in ~/my-foundry-repo/out --out ./docs")
+        .example(
+            "npx $0 SomeContract AnotherContract --in ~/my-foundry-repo/out --out ./docs"
+        )
         .help("h")
         .alias("h", "help")
         .alias("i", "in")
@@ -63,7 +70,7 @@ async function main() {
         {
             outputDir: outputPath,
             pages: "items",
-            templates: "templates",
+            templates: `${__dirname}/templates`,
         }
     );
 }
