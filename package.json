@@ -13,6 +13,10 @@
   "license": "MIT",
   "bin": "bin.js",
   "type": "module",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ZeframLou/foundry-docgen.git"
+  },
   "dependencies": {
     "solidity-docgen": "^0.6.0-beta.16",
     "yargs": "^17.5.1"
